@@ -1,6 +1,4 @@
 ![example workflow](https://github.com/sbruthfo/hello-github-actions/actions/workflows/welcome.yml/badge.svg)
-![example branch parameter](https://github.com/sbruthfo/hello-github-actions/actions/workflows/welcome.yml/badge.svg?branch=main)
-![example event parameter](https://github.com/sbruthfo/hello-github-actions/actions/workflows/welcome.yml/badge.svg?event=push)
 <!--
   <<< Author notes: Header of the course >>>
   Include a 1280x640 image, course title in sentence case, and a concise description in emphasis.
