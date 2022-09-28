@@ -32,4 +32,6 @@ jobs:
       - name: Retrieve version in Stage
         run: |
           echo running api
-          echo curl -s https://bc-coverage-gateway-stage.apps.prod-d01.primepcf.com/actuator/info | jq --raw-output .build.version
+          versionnum=$(curl -s https://bc-coverage-gateway-stage.apps.prod-d01.primepcf.com/actuator/info | jq --raw-output .build.version)
+          echo "versionnum"
+          shell: bash
