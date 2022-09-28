@@ -1,7 +1,17 @@
-name: GitHub Actions Demo
-##run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
-on: 
-   workflow_dispatch:
+# This is a basic workflow to help you get started with Actions
+
+name: CI
+
+# Controls when the workflow will run
+on:
+  # Triggers the workflow on push or pull request events but only for the "main" branch
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
 jobs:
   Explore-GitHub-Actions:
     runs-on: ubuntu-latest
@@ -17,3 +27,9 @@ jobs:
         run: |
           ls ${{ github.workspace }}
       - run: echo "🍏 This job's status is ${{ job.status }}."
+      
+      # Runs a set of commands using the runners shell
+      - name: Run a multi-line script
+        run: |
+          echo Add other actions to build,
+          echo test, and deploy your project.
