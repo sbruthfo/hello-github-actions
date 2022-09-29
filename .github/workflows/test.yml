@@ -31,7 +31,7 @@ jobs:
       # Runs a set of commands using the runners shell
                 
       - name: Retrieve version in Stage
-        run: |
+        run: 
           outversion=$(curl -s http://bc-coverage-gateway-stage.apps.prod-d01.primepcf.com/actuator/info | jq --raw-output .build.version)
           echo $outversion
         shell: bash
