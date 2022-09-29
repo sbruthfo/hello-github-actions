@@ -37,5 +37,5 @@ jobs:
           echo "version=$coverage_percent"
           curl_cmd="https://bc-coverage-gateway-stage.apps.prod-d01.primepcf.com/actuator/info | jq --raw-output .build.version"
           echo $curl_cmd
-          eval $curl_cmd
+          #eval $curl_cmd
         shell: bash
