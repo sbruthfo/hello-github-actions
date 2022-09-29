@@ -32,6 +32,6 @@ jobs:
                 
       - name: Retrieve version in Stage
         run: 
-          outversion=$(curl -s http://bc-coverage-gateway-stage.apps.prod-d01.primepcf.com/actuator/info | jq --raw-output .build.version)
+          outversion=$(curl -s http://jsonplaceholder.typicode.com/posts/1 | jq --raw-output .title)
          
         shell: bash
