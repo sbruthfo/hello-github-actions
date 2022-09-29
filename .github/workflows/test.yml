@@ -14,7 +14,7 @@ on:
   workflow_dispatch:
 jobs:
   Explore-GitHub-Actions:
-    runs-on: ubuntu-latest
+    runs-on: docker
     steps:
       - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
       - run: echo "🐧 This job is now running on a ${{ runner.os }} server hosted by GitHub!"
@@ -35,8 +35,4 @@ jobs:
           coverage_percent="1.0.0"
           # Here, trim the decimal points off of the value so we can evaluate it as an int
           echo "version=$coverage_percent"
-          curl_cmd="http://bc-coverage-gateway-stage.apps.prod-d01.primepcf.com/actuator/info | jq --raw-output .build.version"
-          echo $curl_cmd
-          versionnum=$(curl -s http://bc-coverage-gateway-stage.apps.prod-d01.primepcf.com/actuator/info | jq --raw-output .build.version)
-          echo $versionnum
         shell: bash
