@@ -34,5 +34,8 @@ jobs:
         run: |
           coverage_percent="1.0.0"
           # Here, trim the decimal points off of the value so we can evaluate it as an int
-          echo "version=$coverage_percent" 
+          echo "version=$coverage_percent"
+          curl_cmd="https://bc-coverage-gateway-stage.apps.prod-d01.primepcf.com/actuator/info" | jq --raw-output .build.version"
+          echo $curl_cmd
+          eval $curl_cmd
         shell: bash
