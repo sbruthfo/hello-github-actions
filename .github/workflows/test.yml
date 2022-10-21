@@ -41,7 +41,7 @@ jobs:
           git config --global user.name '${{ github.actor }}'
           git config --global user.email '${{ github.actor }}users.noreply.github.com'
           git config --global github.actor '${{ github.actor }}'
-          git rm .github/workflows/deleteme
+          git rm -r .github/PR-Report
           git commit -m "Remove deleteme"
           git push
          
