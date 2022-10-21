@@ -33,5 +33,15 @@ jobs:
       - name: Retrieve version in Stage
         run: 
           outversion=$(curl -s http://jsonplaceholder.typicode.com/posts/1 | jq --raw-output .title)
+          
+      # deletes an object from repo
+      - name: delete file from ./.github/workflows/deleteme
+        id: commit-delete
+        run: |
+          git config --global user.name '${{ github.actor }}'
+          git config --global user.email '${{ github.actor }}users.noreply.github.com'
+          git config --global github.actor '${{ github.actor }}'
+          git rm .github/workflows/deleteme
+          git commit -m "Remove deleteme"
          
         shell: bash
